@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Tab Border</title>
+    <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+
+<body>
+    <div class="lang-settings">
+        <div class="lang-selector">
+            <button id="set-lang-en">EN</button>
+            <button id="set-lang-es">ES</button>
+        </div>
+        <a href="options.html" target="_blank" data-translate="settings">Settings</a>
+    </div>
+    <h3 data-translate="add_rule">Add Rule</h3>
+    <input type="text" id="url" placeholder="URL" data-translate="url_placeholder">
+    <div class="form-group">
+        <div>
+            <select id="matchType">
+                <option value="exact" data-translate="exact_url">Exact URL</option>
+                <option value="contains" data-translate="contains_word">Contains Word</option>
+                <option value="startsWith" data-translate="starts_with">Starts with</option>
+            </select>
+        </div>
+        <div class="color-container">
+            <div class="color-preview" id="colorPreview" data-translate="color_picker">Color Picker</div>
+        </div>
+    </div>
+    <button id="add" data-translate="add" disabled>Add</button>
+    <h3 data-translate="rules">Rules</h3>
+    <div class="rules-header">
+        <span data-translate="type">Type</span>
+        <span data-translate="url_word">URL/Word</span>
+        <span data-translate="color">Color</span>
+        <span data-translate="actions">Actions</span>
+    </div>
+    <ul id="rules"></ul>
+    <script src="popup.js"></script>
+</body>
+
+</html>

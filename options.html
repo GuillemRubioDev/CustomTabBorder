@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 data-translate="settings">Settings</h2>
+    <label for="borderThickness" data-translate="border_thickness">Border Thickness (px):</label>
+    <input type="number" id="borderThickness" min="1" max="50" step="1">
+    <span data-translate="refresh_notice">You need to refresh the browser for changes to take effect.</span>
+
+    <label for="language" data-translate="language">Language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+    </select>
+
+    <button id="save" data-translate="save">Save</button>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
