@@ -1,7 +1,7 @@
 let translations = {};
 
 // Load translations and apply current language
-fetch("messages.json")
+fetch("../locales/messages.json")
   .then((response) => response.json())
   .then((data) => {
     translations = data;
@@ -54,7 +54,9 @@ document.getElementById("add").addEventListener("click", () => {
     const rules = data.rules || [];
     rules.push({ url, color, matchType });
     chrome.storage.sync.set({ rules }, () => {
-      displayRules(currentLanguage);
+      chrome.storage.sync.get("language", (data) => {
+        displayRules(data.language || "en");
+      });
       document.getElementById("url").value = "";
       document.getElementById("color").value = "#ffffff";
       document.getElementById("colorPreview").style.backgroundColor = "#ffffff";
@@ -101,8 +103,13 @@ function displayRules(currentLanguage) {
     document.querySelectorAll(".delete-btn").forEach((button) => {
       button.addEventListener("click", (e) => {
         const index = e.currentTarget.dataset.index;
-        rules.splice(index, 1);
-        chrome.storage.sync.set({ rules }, () => displayRules(currentLanguage));
+        chrome.storage.sync.get("rules", (data) => {
+          const rules = data.rules || [];
+          rules.splice(index, 1);
+          chrome.storage.sync.set({ rules }, () =>
+            displayRules(currentLanguage)
+          );
+        });
       });
     });
 

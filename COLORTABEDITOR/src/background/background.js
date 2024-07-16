@@ -15,10 +15,22 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       );
 
       if (matchedRule) {
-        chrome.tabs.sendMessage(tabId, {
-          color: matchedRule.color,
-          addBorder: true,
-        });
+        chrome.scripting.executeScript(
+          {
+            target: { tabId: tabId },
+            files: ["src/background/content.js"],
+          },
+          () => {
+            if (chrome.runtime.lastError) {
+              console.error("Error:", chrome.runtime.lastError.message);
+            } else {
+              chrome.tabs.sendMessage(tabId, {
+                color: matchedRule.color,
+                addBorder: true,
+              });
+            }
+          }
+        );
       }
     });
   }

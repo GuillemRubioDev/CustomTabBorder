@@ -1,0 +1,37 @@
+{
+    "en": {
+      "add_rule": "Add Rule",
+      "url_placeholder": "URL",
+      "exact_url": "Exact URL",
+      "contains_word": "Contains Word",
+      "starts_with": "Starts with",
+      "color_picker": "Color Picker",
+      "add": "Add",
+      "rules": "Rules",
+      "type": "Type",
+      "url_word": "URL/Word",
+      "color": "Color",
+      "actions": "Actions",
+      "delete": "Delete",
+      "settings": "Settings",
+      "view_more": "View More"
+    },
+    "es": {
+      "add_rule": "Añadir Regla",
+      "url_placeholder": "URL",
+      "exact_url": "URL Exacta",
+      "contains_word": "Contiene Palabra",
+      "starts_with": "Empieza con",
+      "color_picker": "Selector de Color",
+      "add": "Añadir",
+      "rules": "Reglas",
+      "type": "Tipo",
+      "url_word": "URL/Palabra",
+      "color": "Color",
+      "actions": "Acciones",
+      "delete": "Eliminar",
+      "settings": "Configuraciones",
+      "view_more": "Ver Más"
+    }
+  }
+  

@@ -3,7 +3,7 @@
 
 <head>
     <title>Custom Tab Border</title>
-    <link rel="stylesheet" type="text/css" href="popup.css">
+    <link rel="stylesheet" type="text/css" href="../css/popup.css">
 </head>
 
 <body>
@@ -26,6 +26,7 @@
         </div>
         <div class="color-container">
             <div class="color-preview" id="colorPreview" data-translate="color_picker">Color Picker</div>
+            <input type="hidden" id="color" value="#ffffff">
         </div>
     </div>
     <button id="add" data-translate="add" disabled>Add</button>
@@ -37,7 +38,9 @@
         <span data-translate="actions">Actions</span>
     </div>
     <ul id="rules"></ul>
-    <script src="popup.js"></script>
+    <script src="../js/popup.js"></script>
 </body>
+
+</html>
 
 </html>
